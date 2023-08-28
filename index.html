@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://tokyo.serverlessdays.io/assets/images/severlessdaystokyo-fox-img.png') no-repeat center center fixed;    /* Added the background image */
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-blend-mode: lighten;
+        }
+        p {
+            font-size: 40px;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: none;
+            border-top: none;
+            background: rgba(255, 255, 255, 0.8); /* Made the tab content background semi-transparent */
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab {
+            display: inline-block;
+            margin-right: -4px;
+            position: relative;
+            padding: 10px 30px;
+            cursor: pointer;
+            transition: all 0.5s;
+            border-style: solid;
+            border-width: 0 1px 1px 1px;
+            border-color: #ddd;
+            font-size: 44px;
+        }
+        .tab:first-child {
+            border-left-width: 1px;
+        }
+        .tab:last-child {
+            border-right-width: 1px;
+        }
+        .tab:hover, .tab.active {
+            background: #f0f0f0;
+        }
+        .card {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 1);  /* Made the card background solid */
+        }
+        .time {
+            font-weight: bold;
+        }
+        .title {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function openTab(event, tabName) {
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            var tablinks = document.getElementsByClassName("tab");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="tab" onclick="openTab(event, 'MainTrack')">主要トラック (26F)</div>
+    <div class="tab" onclick="openTab(event, 'BreakoutOne')">ブレイクアウトセッション #1 (11F)</div>
+    <div class="tab" onclick="openTab(event, 'BreakoutTwo')">ブレイクアウトセッション #2 (11F)</div>
+
+    <div id="MainTrack" class="tab-content">
+        <div class="card">
+            <p class="time">9:00〜</p>
+            <p class="title">開場 & Social</p>
+            <p>参加者全員</p>
+        </div>
+        <div class="card">
+            <p class="time">9:40〜10:00</p>
+            <p class="title">Opening / CoC & 8yrs of Serverless Community (JP)</p>
+            <p>吉田真吾 (サイダス/セクションナイン)</p>
+        </div>
+        <div class="card">
+            <p class="time">10:10〜10:50</p>
+            <p class="title">[同時通訳] KEYNOTE: TBA</p>
+            <p>Alex Debrie (AWS Data Hero, DynamoDBBook著者)</p>
+        </div>
+        <div class="card">
+            <p class="time">11:00〜11:50</p>
+            <p class="title">[同時通訳] KEYNOTE: TBA</p>
+            <p>TBA (Amazon Web Services)</p>
+        </div>
+        <div class="card">
+            <p class="time">12:00〜12:50</p>
+            <p class="title">[同時通訳] KEYNOTE: サーバーを超えて：開発者のために作られたTiDB ServerlessとChat2Query</p>
+            <p>Max Liu (PingCAP創業者)</p>
+        </div>
+        <div class="card">
+            <p class="time">13:00〜13:50</p>
+            <p class="title">適切なAPIデザインからはじまる10X生産性なサーバーレスアーキテクチャの開発ライフサイクル・テスト自動化解説(仮)</p>
+            <p>川崎庸市 (Postman)</p>
+        </div>
+        <div class="card">
+            <p class="time">14:00〜14:25</p>
+            <p class="title">Azure OpenAI Service リファレンスアーキテクチャからみる、本番システムレベルのLLMアプリに必要な検討項目の解説</p>
+            <p>坂部広大 (Microsoft)</p>
+        </div>
+        <div class="card">
+            <p class="time">14:30〜14:55</p>
+            <p class="title">アジャイル開発と時代の流れに伴うサーバレスアーキテクチャの変化</p>
+            <p>Yoshitaka Koitabashi (KDDIアジャイル開発センター株式会社 / Momento - Community Advocate)</p>
+        </div>
+        <div class="card">
+            <p class="time">15:00〜15:25</p>
+            <p class="title">[同時通訳] 10yrs lessons for Serverless practices and how to build LLM app using SST for startups(仮)</p>
+            <p>Peter Sbarski (AWS Serverless Hero, 元ACloudGuru VP / Serverlessconf Chief)</p>
+        </div>
+        <div class="card">
+            <p class="time">15:30〜16:20</p>
+            <p class="title">サーバーレスな開発ライフサイクルのモメンタムの変遷</p>
+            <p>Harunobu Kameda (Cloudflare)</p>
+        </div>
+        <div class="card">
+            <p class="time">16:40〜17:30</p>
+            <p class="title">[同時通訳] CLOSING KEYNOTE</p>
+            <p>Khawaja S Shams (Momento, 元Amazon DynamoDB VP)</p>
+        </div>
+    </div>
+
+    <div id="BreakoutOne" class="tab-content">
+        <div class="card">
+            <p class="time">13:00〜13:25</p>
+            <p class="title">Refactoring Serverless</p>
+            <p>淡路大輔 (AWS)</p>
+        </div>
+        <div class="card">
+            <p class="time">13:30〜13:55</p>
+            <p class="title">LLM 時代におさえておきたい Azure Serverless ファミリーまとめ</p>
+            <p>Kazuyuki Miyake (ZEN Architects)</p>
+        </div>
+        <div class="card">
+            <p class="time">14:00〜14:25</p>
+            <p class="title">Next.js × AWS App Runner × AWS AppSyncで進めるクライアントファーストのWEB開発</p>
+            <p>岡 春奈</p>
+        </div>
+        <div class="card">
+            <p class="time">14:30〜14:55</p>
+            <p class="title">TBA</p>
+            <p>TBA (Serverless Operations)</p>
+        </div>
+        <div class="card">
+            <p class="time">15:00〜15:25</p>
+            <p class="title">サーバーレス アーキテクチャを使って、小さく作って大きくする取り組み</p>
+            <p>森大樹 (サーバーワークス)</p>
+        </div>
+        <div class="card">
+            <p class="time">15:30〜15:55</p>
+            <p class="title">LLM × Cloud Runでオンライン薬局の既存オペレーションを自動化した話</p>
+            <p>上野彰大 (PharmaX)</p>
+        </div>
+        <div class="card">
+            <p class="time">16:00〜16:25</p>
+            <p class="title">理解して導入するWebフレームワーク 解決すべき課題に着目する</p>
+            <p>Shiro Seike (Fusic)</p>
+        </div>
+    </div>
+
+    <div id="BreakoutTwo" class="tab-content">
+        <div class="card">
+            <p class="time">13:00〜13:25</p>
+            <p class="title">サーバーレス技術とDevSecOps: 安全かつ迅速なデプロイメントの新時代</p>
+            <p>小松原つかさ (GitLab)</p>
+        </div>
+        <div class="card">
+            <p class="time">13:30〜13:55</p>
+            <p class="title">サーバーレスは死なぬ！みんなEDA(Event Driven Architecture)として使ってるでしょ？</p>
+            <p>Tomoya Oka</p>
+        </div>
+        <div class="card">
+            <p class="time">14:00〜14:25</p>
+            <p class="title">重厚長大な企業の内製開発組織で取り組むサーバーレスアーキテクチャ</p>
+            <p>山田悠太 (三菱重工業)</p>
+        </div>
+        <div class="card">
+            <p class="time">14:30〜14:55</p>
+            <p class="title">サーバーレスで仮想待合室を作ろう！</p>
+            <p>下川賢介 (AWS)</p>
+        </div>
+        <div class="card">
+            <p class="time">15:00〜15:25</p>
+            <p class="title">動画配信サービスの人気番組配信のスパイクアクセスに、サーバーレスキャッシュで立ち向かう</p>
+            <p>三浦一樹 (北海道テレビ放送)， Sonu Kim (Serverless Operations)</p>
+        </div>
+        <div class="card">
+            <p class="time">15:30〜15:55</p>
+            <p class="title">IoTだからこそ、サーバーレスを活用すべき３つの理由</p>
+            <p>松下享平 (ソラコム)</p>
+        </div>
+        <div class="card">
+            <p class="time">16:00〜16:25</p>
+            <p class="title">Zennにみる Cloud Run を中心としたWebアプリケーション構築事例、BigQueryとの統合解説</p>
+            <p>和田祐介 (Zenn)</p>
+        </div>
+    </div>
+
+<!-- 初期表示設定用のスクリプト -->
+<script>
+document.getElementById("MainTrack").style.display = "block";
+document.querySelector('.tab').classList.add('active');
+</script>
+
+</body>
+</html>
